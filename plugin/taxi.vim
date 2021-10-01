@@ -1,5 +1,5 @@
 " Vim plugin to switch working directory
-" Last Change: 2021 Sep 30
+" Last Change: 2021 Oct 1
 " Maintainer: Damian Piotrowski <dapiotrowski93@gmail.com>
 " License:	This file is placed in the public domain.
 
@@ -20,9 +20,10 @@ noremap <script> <Plug>Taxi :Taxi<CR>
 
 let s:keepcpo           = &cpo
 
-let g:taxi_buff_name = "vim_repos_buff"
+let g:taxi_buff_name = "taxi_locations"
 let g:taxi_select_idx = 1
 let g:taxi_add_headers = 1
+let g:taxi_header_hilight = 1
 let g:taxi_short_name = 1
 
 set cpo&vim
@@ -65,7 +66,9 @@ fun! s:fillBuffer()
     let s:line_nr += 1
   endfor
 
-  call s:hilightHeaders()
+  if g:taxi_header_hilight == 1
+    call s:hilightHeaders()
+  endif
 endfun
 
 fun! s:hilightHeaders()

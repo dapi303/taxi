@@ -1,0 +1,41 @@
+TAXI - TABLE OF CONTENTS                                        *taxi taxi-toc*
+==============================================================================
+
+Define locations                  taxi-locations
+Group header                      taxi-list-header
+Short name                        taxi-list-short
+
+
+Define locations                                               *taxi-locations*
+==============================================================================
+
+Taxi drivers needs list of potential locations to visit,
+provide locations in array for 'g:taxi_directories'
+    "Define three example locations
+    let g:taxi_directories = ['~/priv-repos', '~/company-repos', '~/public-repos']
+By default home directory is set.
+
+
+Group header                                                 *taxi-list-header*
+==============================================================================
+
+Name of each repositories group (locations provided by 'g:taxi_directories')
+is printed on switch list at top of its content.
+
+This behavior can be disabled with following code
+     let g:taxi_add_headers = 0
+
+Headers are hilighted, if you wish to disable use code below
+    let g:taxi_header_hilight = 0
+
+
+Short name                                                    *taxi-list-short*
+==============================================================================
+
+By default only name of directory is visible in list of locations,
+it can be changed to print whole path for each element by following code:
+
+   let g:taxi_short_name = 0
+
+==============================================================================
+vim:tw=78:sw=2:ts=2:ft=help:norl:nowrap:
